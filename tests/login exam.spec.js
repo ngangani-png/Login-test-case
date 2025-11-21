@@ -25,11 +25,7 @@ test("Positive LogIn test", async ({ page }) => {
   await expect(page).toHaveURL(logout);
 
   await expect(page.locator(".has-text-align-center")).toContainText(masg);
-  await expect(
-    page.locator(
-      '//*[@href="https://practicetestautomation.com/practice-test-login/"]'
-    )
-  ).toContainText("Log out");
+  await expect(page.locator(`//*[@href='${url}']`)).toContainText("Log out");
 });
 
 test("Negative username test", async ({ page }) => {
